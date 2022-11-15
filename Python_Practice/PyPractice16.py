@@ -40,8 +40,8 @@ def update() :
         else :
             print("어떤 항목을 수정하시겠습니까?")
             print("1.전체 2.DEV_NAME 3.DEV_EUI 4.DEV_APP_KEY 5.DEV_APP_EUI 0.돌아가기")
-            select = int(input(">>> "))
             try :
+                select = int(input(">>> "))
                 if select == 0 :
                     break
                 elif select == 1 :
