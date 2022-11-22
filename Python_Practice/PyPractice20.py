@@ -22,6 +22,7 @@ if os.path.isfile(csvname) :
 #gsrems.co.kr 로그인 세션 구현
 id = input("id >>> ")
 password = input("password >>> ")
+plant_id = input("추출할 발전소 번호 입력 >>> ")
 
 login_info = {'id':id, 'password':password}
 
@@ -32,13 +33,15 @@ res = session.post(url_login, data = login_info)
 res.raise_for_status()
 
 # 해당 발전소 페이지 이동 세션
-webpage = "http://gsrems.co.kr/monitoring/plant/128"
+webpage = "http://gsrems.co.kr/monitoring/plant/"+plant_id
 res = session.get(webpage)
 res.raise_for_status()
 print(res)
 soup = BeautifulSoup(res.text, 'html.parser')
 
-while date_check == "2000" :
+date_check = 0
+
+while date_check != "2000" :
 #설비용량, 금일발전량, 금일발전시간, 전일발전량, 전일발전시간, 금월발전량, 금월발전시간, 금년발전량, 금년발전시간, 누적발전량, CO2저감량, 식수효과
     now = datetime.datetime.now()
     nowDate = now.strftime("%Y%m%d")
