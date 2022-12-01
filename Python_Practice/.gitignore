@@ -2,6 +2,5 @@
 DB.db 
 score.txt
 Lora_info.csv
-*.db
 *.csv
 *.txt
