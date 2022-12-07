@@ -181,3 +181,80 @@ section.map p {
     z-index: 1;     /* 3차원 z축 default값이 0인데 이것을 1로 변경함으로써 추후 반영될 footer부분 일러스트 이미지보다 위쪽에 보이도록 해줌 */
     overflow: hidden;
 }
+
+
+/* footer 영역 */
+
+footer {
+    background-color: #040d22;
+    position: relative;     /*curve 이미지의 기준*/
+    margin-top: 20%;
+}
+
+footer .curve {
+    transform: scale(1,-1);  /*곡면의 상하 반전*/
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+
+/* footer 영역 위아래 여백 추가 */
+footer .container {
+
+}
+
+/* map과 footer 사이 일러스트레이트 이미지 관련 */
+footer img.illustration {
+    width: 100%;
+    margin-top: -33%;   /*일러스트의 위치를 컨테이너 기준 위쪽으로 이동*/
+    margin-bottom: 50%;
+    transform: scale(-1,1)        /*출력한 이미지의 좌우를 반전시킬 때 사용  / scale(x축 크기비율, y축 크기비율) x축 비율 지정을 음수로 하면 좌우 반전이 일어난다*/
+}
+
+/* footer 로고 영역 관련 */
+footer img.logo {
+    opacity: .4;
+}
+
+/* footer 링크목록 관련 */
+footer h5 {
+    font-weight: 700;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 20px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color : rgba(255,255,255,.4);
+    text-decoration: none;  /* 클래스에 각각 추가하지 않고 선택자를 통해 밑줄 제거*/
+    transition: .5s;    /* 흰색-회색 전환에 0.3초 추가 */
+}
+
+footer ul li a:hover {  /* 커서를 해당 영역 위에 가져가면 변환 */
+    color : white;
+}
+
+
+/* footer 최하위 영역 관련 */
+footer .site-links {
+    margin: 0;  /* ul태그의 margin이 default로 1rem으로 설정되어 있음으로 이를 0으로 초기화해주든 단계 추가 */
+    margin-top: 60px;
+    padding: 20px;
+    background-color: rgba(255,255,255,.05);
+    display: flex;  /* d-flex 클래스를 추가하여 적용할 수도 있다! */
+    justify-content: center;    /* 내용을 가운데 정렬 */
+}
+
+footer .site-links li {
+    color: rgba(255,255,255,.4);
+    margin-bottom: 0;   /* 위쪽에서 li 태그에 margin-bottom을 적용하여 해당 요소를 0으로 만들어주기 위함 */
+    margin-right: 20px; /* 각 요소별로 20px만큼 여백이 생김 (마지막 요소도 margin이 발생)*/
+}
+
+/* 마지막 요소의 margin-right 적용부분을 0으로 만들어 정확한 가운데 정렬을 맞춰줌 */
+footer .site-links li:last-child {
+    margin-right: 0px;
+}
