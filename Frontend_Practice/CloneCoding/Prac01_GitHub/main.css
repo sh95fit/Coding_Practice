@@ -11,6 +11,7 @@ header {
     background-color: #040d22;
 }
 
+/*
 header .container {
 
     /* Bootstrap에서 제공하는 클래스 기능으로 대체!
@@ -24,5 +25,18 @@ header .container {
     /* 아래쪽 여백 : 20px (padding 이용)
     padding-bottom: 20px;
 
-    */
+    
+}
+*/
+
+/* Search Box에 글꼴 색상, 투명도 지정) */
+header .forms input.form-control {
+    color: white;
+    background-color: rgba(255,255,255, .15);   /*rgba(r,g,b,투명도)*/
+    border-color: rgba(255,255,255, .3);
+}
+
+
+header .forms input.form-control::placeholder {         /* : 1개이면 가상 클래스 선택자, :: 2개이면 가상 요소 선택자 */
+    color: rgba(255,255,255, .6);
 }

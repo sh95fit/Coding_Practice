@@ -35,13 +35,16 @@
         <!-- d-flex 클래스를 통해 수평 정렬 / align-items-center를 통해 수직 정렬을 가운데에 맞춤 / py-3를 통해 y축(top,bottom)에 동일 패딩 적용-->
         <!-- Container -->
         <div class="container d-flex align-items-center py-3">
+            
+            <!-- 좌측 Header 부분 -->
             <!-- 로고 : 선택 시 페이지 이동 -> <a> 태그 이용 / 링크 선정이 안된 경우 : #으로 표기하여 에러 방지 / me-2 클래스를 추가해 end 기준 수치 2만큼 margin-->
             <a class="logo me-2" href="#">
                 <!-- 로고 이미지 넣기 -->
                 <img src="./images/header-logo.svg" alt="GitHub Logo">
             </a>
+
             <!-- 4개의 메뉴 생성(Bootstrap 내장 기능 활용(nav-item,nav-link)) / text-light 클래스 추가 : 메뉴의 글꼴 색을 흰색으로 변경 -->
-            <ul class="nav">
+            <ul class="nav flex-grow-1">    <!-- flex-grow-1 : 1 수치(증가 너비 비율)로 nav 클래스가 최대한 많은 영역을 사용하도록 만들어줌(우측 Header 부분을 오른쪽에 치우치도록 하기 위함!)-->
                 <li class="nav-item">
                     <a href="#" class="nav-link text-light">Personal</a>        <!--a 태그는 링크 태그로 글꼴 색상을 파란색으로 지정해주고 있으므로 상위 설정에 의해 상속 받을 수 없다-->
                 </li>
@@ -55,6 +58,15 @@
                     <a href="#" class="nav-link text-light">Explore</a>
                 </li>
             </ul>
+
+            <!-- 우측 Header 부분 -->
+            <div class="forms d-flex">      <!-- flex-shrink-1 : 감소너비! 너비를 줄이기 위해 Default 값 1로 지정되어 있음 하위 요소들의 높이를 줄일 때 사용 -->
+                <!-- Search Box -->
+                <input type="text" class="form-control me-2" placeholder="Search GitHub">
+                <!-- sign in, sign up 버튼 -->
+                <button class="btn btn-link text-light flex-shrink-0 me-2 text-decoration-none">Sign in</button>        <!-- btn-link : 배경 없음  flex-shrink-0 : 글자 띄워쓰기로 인해 발생하는 감소너비를 없애줌!-->
+                <button class="btn btn-outline-light flex-shrink-0">Sign up</button>                                    <!--text-decoration-none : text-link에 의해 생기는 밑줄을 없애줌 (text-decoration은 텍스트에 줄을 넣는 효과)-->
+            </div>
         </div>
     </header>
 
