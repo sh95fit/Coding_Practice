@@ -154,6 +154,11 @@ section.youtube .ratio {
     /* Youtube iframe 위치 확인용! */
     background-color: black;    /* iframe 자리를 잡은 후 주석 처리 */
 }
+@media (max-width: 768px) {
+    section.youtube img.astronaut {
+        display:none;
+    }
+}
 
 
 /* features 영역 추가 */
@@ -180,6 +185,11 @@ section.features .card img {
     padding-bottom: 30px;
     padding-left: 60px;
     padding-right: 60px;*/
+}
+@media (max-width: 576px) {
+    section.features .card img {
+        padding: 20px 30px;
+    }
 }
 
 /* Google Map 영역 추가 */
@@ -238,7 +248,7 @@ footer .container {
 footer img.illustration {
     width: 100%;
     margin-top: -33%;   /*일러스트의 위치를 컨테이너 기준 위쪽으로 이동*/
-    margin-bottom: 50%;
+    margin-bottom: 20%;
     transform: scale(-1,1)        /*출력한 이미지의 좌우를 반전시킬 때 사용  / scale(x축 크기비율, y축 크기비율) x축 비율 지정을 음수로 하면 좌우 반전이 일어난다*/
 }
 
@@ -277,6 +287,7 @@ footer .site-links {
     background-color: rgba(255,255,255,.05);
     display: flex;  /* d-flex 클래스를 추가하여 적용할 수도 있다! */
     justify-content: center;    /* 내용을 가운데 정렬 */
+    flex-wrap: wrap;    /* d-flex로 설정된 영역의 줄바꿈 처리가 가능하도록 해줌 */
 }
 
 footer .site-links li {
@@ -288,4 +299,12 @@ footer .site-links li {
 /* 마지막 요소의 margin-right 적용부분을 0으로 만들어 정확한 가운데 정렬을 맞춰줌 */
 footer .site-links li:last-child {
     margin-right: 0px;
+}
+@media (max-width: 992px) {
+    footer {
+        text-align: center;
+    }
+    footer img.logo {
+        margin-bottom: 50px;
+    }
 }
