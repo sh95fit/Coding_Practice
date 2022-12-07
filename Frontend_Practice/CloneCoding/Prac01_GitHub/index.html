@@ -70,5 +70,34 @@
         </div>
     </header>
 
+    <!-- section 태그 또한 특별한 의미가 있는 것은 아니므로 div로 대체 가능 But, 가독성을 위해 사용 권장 -->
+    <!-- Hero Contents 만들기 -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">   <!-- 헤드라인 영역 지정 12열 중 7열만큼 영역 사용-->
+                <div class="col-7">
+                    <!-- 헤드라인 제목, 내용 -->
+                    <div class="headline">
+                        <h1 class="text-white">Where the world builds software</h1>
+                        <p class="text-white-50">Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="row">   <!-- 로그인 영역 지정 12열 중 5열만큼 영역 사용-->
+                <div class="col-5">
+                    <!-- 레이아웃을 만들기 위해 form 사용 -->
+                    <!-- 로그인 영역(E-mail 입력창, Password 입력창, 로그인 버튼) -->
+                    <form> 
+                        <input type="text" class="form-control form-control-lg mb-3" placeholder="E-mail address">
+                        <input type="password" class="form-control form-control-lg mb-3" placeholder="Password">
+                        <div class="d-grid">    <!-- 버튼이 최대한 늘어나도록 하기 위함(default값 글자크기에 맞춰 생성)-->
+                            <button class="btn btn-primary btn-lg">Sign up for GitHub</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>

@@ -36,7 +36,29 @@ header .forms input.form-control {
     border-color: rgba(255,255,255, .3);
 }
 
-
+/* Serch Box 내 힌트 부분 글씨 색상, 투명도 조정 */
 header .forms input.form-control::placeholder {         /* : 1개이면 가상 클래스 선택자, :: 2개이면 가상 요소 선택자 */
     color: rgba(255,255,255, .6);
+}
+
+
+section.hero {
+    /* hero 영역 구분을 위해 색 지정 */
+    background-color: #040d22;
+}
+
+/* Hero Contents 영역 위아래 패딩 추가 */
+section.hero .container {
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+section.hero .headline h1 {
+    font-size: 68px;
+    font-weight: 700;
+    letter-spacing: -2px;       /* 글자 사이 자간을 의미 */
+}
+
+section.hero .headline p {
+    font-size: 26px;
 }
