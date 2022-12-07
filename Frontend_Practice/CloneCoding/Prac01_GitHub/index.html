@@ -28,25 +28,26 @@
 </head>
 <body>
 
-    <!-- header 태그가 따로 동작을 부여하거나 특별한 특성이 없으므로 div로 대체는 가능하지만 명확하게 해주기 위해 사용 -->
-    <!-- Header 만들기 -->
+    <!-- hero 섹션 안에 이미지 배치 시 header를 덮어쓰게 되므로 해당 부분은 부득이하게 위치 변경
+    <!-- header 태그가 따로 동작을 부여하거나 특별한 특성이 없으므로 div로 대체는 가능하지만 명확하게 해주기 위해 사용 
+    <!-- Header 만들기 
     <header>
-        <!-- container 클래스를 지정해 가운데 정렬 -->
-        <!-- d-flex 클래스를 통해 수평 정렬 / align-items-center를 통해 수직 정렬을 가운데에 맞춤 / py-3를 통해 y축(top,bottom)에 동일 패딩 적용-->
-        <!-- Container -->
+        <!-- container 클래스를 지정해 가운데 정렬 
+        <!-- d-flex 클래스를 통해 수평 정렬 / align-items-center를 통해 수직 정렬을 가운데에 맞춤 / py-3를 통해 y축(top,bottom)에 동일 패딩 적용
+        <!-- Container 
         <div class="container d-flex align-items-center py-3">
             
-            <!-- 좌측 Header 부분 -->
-            <!-- 로고 : 선택 시 페이지 이동 -> <a> 태그 이용 / 링크 선정이 안된 경우 : #으로 표기하여 에러 방지 / me-2 클래스를 추가해 end 기준 수치 2만큼 margin-->
+            <!-- 좌측 Header 부분 
+            <!-- 로고 : 선택 시 페이지 이동 -> <a> 태그 이용 / 링크 선정이 안된 경우 : #으로 표기하여 에러 방지 / me-2 클래스를 추가해 end 기준 수치 2만큼 margin
             <a class="logo me-2" href="#">
-                <!-- 로고 이미지 넣기 -->
+                <!-- 로고 이미지 넣기 
                 <img src="./images/header-logo.svg" alt="GitHub Logo">
             </a>
 
-            <!-- 4개의 메뉴 생성(Bootstrap 내장 기능 활용(nav-item,nav-link)) / text-light 클래스 추가 : 메뉴의 글꼴 색을 흰색으로 변경 -->
-            <ul class="nav flex-grow-1">    <!-- flex-grow-1 : 1 수치(증가 너비 비율)로 nav 클래스가 최대한 많은 영역을 사용하도록 만들어줌(우측 Header 부분을 오른쪽에 치우치도록 하기 위함!)-->
+            <!-- 4개의 메뉴 생성(Bootstrap 내장 기능 활용(nav-item,nav-link)) / text-light 클래스 추가 : 메뉴의 글꼴 색을 흰색으로 변경 
+            <ul class="nav flex-grow-1">    <!-- flex-grow-1 : 1 수치(증가 너비 비율)로 nav 클래스가 최대한 많은 영역을 사용하도록 만들어줌(우측 Header 부분을 오른쪽에 치우치도록 하기 위함!)
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-light">Personal</a>        <!--a 태그는 링크 태그로 글꼴 색상을 파란색으로 지정해주고 있으므로 상위 설정에 의해 상속 받을 수 없다-->
+                    <a href="#" class="nav-link text-light">Personal</a>        <!--a 태그는 링크 태그로 글꼴 색상을 파란색으로 지정해주고 있으므로 상위 설정에 의해 상속 받을 수 없다
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link text-light">Open Source</a>
@@ -59,20 +60,70 @@
                 </li>
             </ul>
 
-            <!-- 우측 Header 부분 -->
-            <div class="forms d-flex">      <!-- flex-shrink-1 : 감소너비! 너비를 줄이기 위해 Default 값 1로 지정되어 있음 하위 요소들의 높이를 줄일 때 사용 -->
-                <!-- Search Box -->
+            <!-- 우측 Header 부분 
+            <div class="forms d-flex">      <!-- flex-shrink-1 : 감소너비! 너비를 줄이기 위해 Default 값 1로 지정되어 있음 하위 요소들의 높이를 줄일 때 사용 
+                <!-- Search Box -
                 <input type="text" class="form-control me-2" placeholder="Search GitHub">
-                <!-- sign in, sign up 버튼 -->
-                <button class="btn btn-link text-light flex-shrink-0 me-2 text-decoration-none">Sign in</button>        <!-- btn-link : 배경 없음  flex-shrink-0 : 글자 띄워쓰기로 인해 발생하는 감소너비를 없애줌!-->
-                <button class="btn btn-outline-light flex-shrink-0">Sign up</button>                                    <!--text-decoration-none : text-link에 의해 생기는 밑줄을 없애줌 (text-decoration은 텍스트에 줄을 넣는 효과)-->
+                <!-- sign in, sign up 버튼 -
+                <button class="btn btn-link text-light flex-shrink-0 me-2 text-decoration-none">Sign in</button>        <!-- btn-link : 배경 없음  flex-shrink-0 : 글자 띄워쓰기로 인해 발생하는 감소너비를 없애줌!
+                <button class="btn btn-outline-light flex-shrink-0">Sign up</button>                                    <!--text-decoration-none : text-link에 의해 생기는 밑줄을 없애줌 (text-decoration은 텍스트에 줄을 넣는 효과)
             </div>
         </div>
     </header>
+    -->
 
     <!-- section 태그 또한 특별한 의미가 있는 것은 아니므로 div로 대체 가능 But, 가독성을 위해 사용 권장 -->
     <!-- Hero Contents 만들기 -->
     <section class="hero">
+        <!-- 이미지가 아래 내용보다 나중에 추가되면 그 위에 덮어쓰는 형태가 되므로 위에 위치시켜야한다! -->
+        <!-- 배경 이미지 추가 -->
+        <!-- 지구 이미지 -->
+        <img class="globe" src="./images/hero-globe.jpg" alt="Globe">
+        <!-- 번짐 효과 이미지 -->
+        <img class="glow" src="./images/hero-glow.svg" alt="Glow">
+
+        <!-- Header의 변경된 위치 (배경이미지 아래로 이동) -->
+        <header>
+            <!-- container 클래스를 지정해 가운데 정렬 -->
+            <!-- d-flex 클래스를 통해 수평 정렬 / align-items-center를 통해 수직 정렬을 가운데에 맞춤 / py-3를 통해 y축(top,bottom)에 동일 패딩 적용-->
+            <!-- Container -->
+            <div class="container d-flex align-items-center py-3">
+                
+                <!-- 좌측 Header 부분 -->
+                <!-- 로고 : 선택 시 페이지 이동 -> <a> 태그 이용 / 링크 선정이 안된 경우 : #으로 표기하여 에러 방지 / me-2 클래스를 추가해 end 기준 수치 2만큼 margin-->
+                <a class="logo me-2" href="#">
+                    <!-- 로고 이미지 넣기 -->
+                    <img src="./images/header-logo.svg" alt="GitHub Logo">
+                </a>
+    
+                <!-- 4개의 메뉴 생성(Bootstrap 내장 기능 활용(nav-item,nav-link)) / text-light 클래스 추가 : 메뉴의 글꼴 색을 흰색으로 변경 -->
+                <ul class="nav flex-grow-1">    <!-- flex-grow-1 : 1 수치(증가 너비 비율)로 nav 클래스가 최대한 많은 영역을 사용하도록 만들어줌(우측 Header 부분을 오른쪽에 치우치도록 하기 위함!)-->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Personal</a>        <!--a 태그는 링크 태그로 글꼴 색상을 파란색으로 지정해주고 있으므로 상위 설정에 의해 상속 받을 수 없다-->
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Open Source</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Explore</a>
+                    </li>
+                </ul>
+    
+                <!-- 우측 Header 부분 -->
+                <div class="forms d-flex">      <!-- flex-shrink-1 : 감소너비! 너비를 줄이기 위해 Default 값 1로 지정되어 있음 하위 요소들의 높이를 줄일 때 사용 -->
+                    <!-- Search Box -->
+                    <input type="text" class="form-control me-2" placeholder="Search GitHub">
+                    <!-- sign in, sign up 버튼 -->
+                    <button class="btn btn-link text-light flex-shrink-0 me-2 text-decoration-none">Sign in</button>        <!-- btn-link : 배경 없음  flex-shrink-0 : 글자 띄워쓰기로 인해 발생하는 감소너비를 없애줌!-->
+                    <button class="btn btn-outline-light flex-shrink-0">Sign up</button>                                    <!--text-decoration-none : text-link에 의해 생기는 밑줄을 없애줌 (text-decoration은 텍스트에 줄을 넣는 효과)-->
+                </div>
+            </div>
+        </header>
+
+
         <div class="container">
             <div class="row">   <!-- 헤드라인 영역 지정 12열 중 7열만큼 영역 사용-->
                 <div class="col-7">
@@ -97,6 +148,8 @@
                 </div>
             </div>
         </div>
+
+        <img class="curve" src="./images/curve.svg" alt="Curve">
     </section>
 
 </body>

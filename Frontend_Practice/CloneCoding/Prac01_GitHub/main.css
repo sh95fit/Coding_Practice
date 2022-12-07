@@ -8,7 +8,8 @@ body {
 
 header {
     /* 위치 확인을 위해 임시로 배경화면 색 지정 */
-    background-color: #040d22;
+    /* background-color: #040d22; */  /* 배경을 넣어준 다음에는 불필요하므로 없애줌 */
+    position: relative;      /*position을 지정하는 것이 없는 것보다 위치 우선되므로 지정 필요 (배경이미지 위에 배치하기 위함)*/
 }
 
 /*
@@ -45,20 +46,49 @@ header .forms input.form-control::placeholder {         /* : 1개이면 가상 �
 section.hero {
     /* hero 영역 구분을 위해 색 지정 */
     background-color: #040d22;
+    /* 배경이미지 배치의 기준 설정 */
+    position: relative;  
+    overflow: hidden;   /* 영역 밖으로 넘치는 부분을 잘라내는 역할 */    /*position을 지정하는 것이 없는 것보다 위치 우선되므로 지정 필요 (배경이미지 위에 배치하기 위함)*/
 }
 
 /* Hero Contents 영역 위아래 패딩 추가 */
 section.hero .container {
     padding-top: 160px;
     padding-bottom: 160px;
+    position: relative;
 }
 
+/* 헤드라인 제목 글씨 크기, 굵기, 자간 조정 */
 section.hero .headline h1 {
     font-size: 68px;
     font-weight: 700;
     letter-spacing: -2px;       /* 글자 사이 자간을 의미 */
 }
 
+/* 헤드라인 내용 글씨 크기 조정 */
 section.hero .headline p {
     font-size: 26px;
 }
+
+/* img가 겹쳐져서 보이게 하기 위해 Section에 배치 */
+section.hero img.globe {
+    width: 900px;
+    position: absolute; 
+    top: -5%;
+    left: 46%;
+}
+
+section.hero img.glow {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 50%;       /* top, left는 relative로 지정된 부모요소 기준으로 배치 */
+    left: 50%;
+    transform: translate(-50%,-50%);    /*transform은 자기 자신을 기준으로 배치*/
+}
+
+section.hero .curve {
+    position: absolute;
+    bottom: -1px;
+    left: 0;    /* 0인 경우 단위를 붙이지 않음 */
+}   
