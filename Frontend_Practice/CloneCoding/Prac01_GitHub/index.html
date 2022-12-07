@@ -28,5 +28,35 @@
 </head>
 <body>
 
+    <!-- header 태그가 따로 동작을 부여하거나 특별한 특성이 없으므로 div로 대체는 가능하지만 명확하게 해주기 위해 사용 -->
+    <!-- Header 만들기 -->
+    <header>
+        <!-- container 클래스를 지정해 가운데 정렬 -->
+        <!-- d-flex 클래스를 통해 수평 정렬 / align-items-center를 통해 수직 정렬을 가운데에 맞춤 / py-3를 통해 y축(top,bottom)에 동일 패딩 적용-->
+        <!-- Container -->
+        <div class="container d-flex align-items-center py-3">
+            <!-- 로고 : 선택 시 페이지 이동 -> <a> 태그 이용 / 링크 선정이 안된 경우 : #으로 표기하여 에러 방지 / me-2 클래스를 추가해 end 기준 수치 2만큼 margin-->
+            <a class="logo me-2" href="#">
+                <!-- 로고 이미지 넣기 -->
+                <img src="./images/header-logo.svg" alt="GitHub Logo">
+            </a>
+            <!-- 4개의 메뉴 생성(Bootstrap 내장 기능 활용(nav-item,nav-link)) / text-light 클래스 추가 : 메뉴의 글꼴 색을 흰색으로 변경 -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-light">Personal</a>        <!--a 태그는 링크 태그로 글꼴 색상을 파란색으로 지정해주고 있으므로 상위 설정에 의해 상속 받을 수 없다-->
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-light">Open Source</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-light">Business</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-light">Explore</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
 </body>
 </html>

@@ -5,3 +5,24 @@ body {
     font-family: 'Poppins', sans-serif;     /* body 태그 내 구글폰트가 상속되어 최상위 요소에 지정해두면 모든 후손 요소에 적용됨 */
     font-weight: 300;   /* 기본 폰트 사이즈를 300으로 지정해두고 사용하기 위해 작성(font-weight : 가중치, 글꼴의 두께를 의미 */
 }
+
+header {
+    /* 위치 확인을 위해 임시로 배경화면 색 지정 */
+    background-color: #040d22;
+}
+
+header .container {
+
+    /* Bootstrap에서 제공하는 클래스 기능으로 대체!
+
+    /* 로고와 4개의 메뉴 수평 정렬(flex 활용)
+    display: flex;
+    /* 수직 정렬을 가운데로 설정
+    align-items: center;
+    /* 위쪽 여백 : 20px (padding 이용)
+    padding-top: 20px;
+    /* 아래쪽 여백 : 20px (padding 이용)
+    padding-bottom: 20px;
+
+    */
+}
