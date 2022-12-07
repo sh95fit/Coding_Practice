@@ -130,6 +130,7 @@ section.features {
 
 }
 
+/* features 영역 위아래 여백 추가 */
 section.features .container {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -148,4 +149,35 @@ section.features .card img {
     padding-bottom: 30px;
     padding-left: 60px;
     padding-right: 60px;*/
+}
+
+/* Google Map 영역 추가 */
+section.map {
+
+}
+
+/* map 영역 위아래 여백 추가 */
+section.map .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #627597;
+}
+
+/* map 영역 제목 부분 폰트 변경 */
+section.map h1 {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+/* map 영역 내용 부분 폰트 사이즈 변경 */
+section.map p {
+    font-size: 24px;
+}
+
+#map {      /*id의 경우 공유한 이름이므로 조상요소를 지정해주지 않아도 된다!*/
+    height: 500px;      /* div 태그로 만들어 최대한 늘어나려하므로 가로 너비는 지정하지 않음 */
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 10px;
+    z-index: 1;     /* 3차원 z축 default값이 0인데 이것을 1로 변경함으로써 추후 반영될 footer부분 일러스트 이미지보다 위쪽에 보이도록 해줌 */
+    overflow: hidden;
 }
