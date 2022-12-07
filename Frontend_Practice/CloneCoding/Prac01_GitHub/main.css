@@ -126,9 +126,9 @@ section.hero .curve {
 
 
 /* YOUTUBE 영상 넣기 */
-section.youtube {
+/* section.youtube {
 
-}
+} */
 
 /* Youtube 영상이 반영된 Container 위치 조정 */
 section.youtube .container {
@@ -162,9 +162,9 @@ section.youtube .ratio {
 
 
 /* features 영역 추가 */
-section.features {
+/* section.features {
 
-}
+} */
 
 /* features 영역 위아래 여백 추가 */
 section.features .container {
@@ -193,9 +193,11 @@ section.features .card img {
 }
 
 /* Google Map 영역 추가 */
+/*
 section.map {
 
 }
+*/
 
 /* map 영역 위아래 여백 추가 */
 section.map .container {
@@ -240,9 +242,9 @@ footer .curve {
 }
 
 /* footer 영역 위아래 여백 추가 */
-footer .container {
+/* footer .container {
 
-}
+} */
 
 /* map과 footer 사이 일러스트레이트 이미지 관련 */
 footer img.illustration {
