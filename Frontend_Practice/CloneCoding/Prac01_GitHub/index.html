@@ -26,6 +26,7 @@
     <!-- MAIN.CSS -->
     <link rel="stylesheet" href="./main.css">
 </head>
+
 <body>
 
     <!-- hero 섹션 안에 이미지 배치 시 header를 덮어쓰게 되므로 해당 부분은 부득이하게 위치 변경
@@ -74,6 +75,7 @@
 
     <!-- section 태그 또한 특별한 의미가 있는 것은 아니므로 div로 대체 가능 But, 가독성을 위해 사용 권장 -->
     <!-- Hero Contents 만들기 -->
+    <!-- HERO -->
     <section class="hero">
         <!-- 이미지가 아래 내용보다 나중에 추가되면 그 위에 덮어쓰는 형태가 되므로 위에 위치시켜야한다! -->
         <!-- 배경 이미지 추가 -->
@@ -83,6 +85,7 @@
         <img class="glow" src="./images/hero-glow.svg" alt="Glow">
 
         <!-- Header의 변경된 위치 (배경이미지 아래로 이동) -->
+        <!-- HEADER -->
         <header>
             <!-- container 클래스를 지정해 가운데 정렬 -->
             <!-- d-flex 클래스를 통해 수평 정렬 / align-items-center를 통해 수직 정렬을 가운데에 맞춤 / py-3를 통해 y축(top,bottom)에 동일 패딩 적용-->
@@ -150,6 +153,18 @@
         </div>
 
         <img class="curve" src="./images/curve.svg" alt="Curve">
+    </section>
+
+    <!-- YOUTUBE -->
+    <section class="youtube">
+        <div class="container">
+            <!-- 우주비행사 캐릭터 추가 -->
+            <img class="astronaut" src="./images/hero-astronaut.svg" alt="Astronaut">
+            <!-- 16:9 비율의 Youtube 영상 추가 -->
+            <div class="ratio ratio-16x9">   
+                <iframe src="https://www.youtube.com/embed/2m9nUP-e8Co" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
     </section>
 
 </body>

@@ -92,3 +92,34 @@ section.hero .curve {
     bottom: -1px;
     left: 0;    /* 0인 경우 단위를 붙이지 않음 */
 }   
+
+
+/* YOUTUBE 영상 넣기 */
+section.youtube {
+
+}
+
+/* Youtube 영상이 반영된 Container 위치 조정 */
+section.youtube .container {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+/* 우주비행사 캐릭터 위치 조정 */
+section.youtube img.astronaut {
+    width: 480px;
+    position: absolute;
+    top: -420px;
+    right: 0;
+}
+
+/* 유튜브 영상 박스 둥근 모서리 처리 */
+section.youtube .ratio {
+    /* 모서리를 둥글게 설정 */
+    border-radius: 10px;
+    /* iframe를 ratio 기준으로 벗어나는 부분 숨김 처리 */
+    overflow: hidden;
+    /* Youtube iframe 위치 확인용! */
+    background-color: black;    /* iframe 자리를 잡은 후 주석 처리 */
+}
