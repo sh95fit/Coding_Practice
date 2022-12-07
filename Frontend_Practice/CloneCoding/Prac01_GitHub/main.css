@@ -1,0 +1,7 @@
+body {
+    /* font-family : 특정한 요소에 글꼴을 지정해주는 속성 */
+    /* font-family : 선택할 구글폰트, 구글폰트를 불러오지 못할 경우 사용하게될 글꼴(sans-serif : 고딕체 - PC에 일반적으로 저장된 글꼴) */
+    /* GOOGLE FONTS - CSS rule 추가 */
+    font-family: 'Poppins', sans-serif;     /* body 태그 내 구글폰트가 상속되어 최상위 요소에 지정해두면 모든 후손 요소에 적용됨 */
+    font-weight: 300;   /* 기본 폰트 사이즈를 300으로 지정해두고 사용하기 위해 작성(font-weight : 가중치, 글꼴의 두께를 의미 */
+}
