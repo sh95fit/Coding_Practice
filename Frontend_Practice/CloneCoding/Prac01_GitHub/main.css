@@ -123,3 +123,29 @@ section.youtube .ratio {
     /* Youtube iframe 위치 확인용! */
     background-color: black;    /* iframe 자리를 잡은 후 주석 처리 */
 }
+
+
+/* features 영역 추가 */
+section.features {
+
+}
+
+section.features .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* features의 이미지 영역 중 첫번째 */
+section.features .card {
+    color: #627597;
+    border: none;
+}
+
+/* features 이미지 패딩 지정 */
+section.features .card img {
+    padding: 30px 60px;  /* padding: 위아래 값, 좌우 값 / 한꺼번에 적용해줄 수 있다! (즉 각각 정해줄 필요가 없어진다!*/
+    /*padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px;*/
+}
