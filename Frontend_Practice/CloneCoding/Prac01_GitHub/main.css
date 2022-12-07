@@ -42,6 +42,37 @@ header .forms input.form-control::placeholder {         /* : 1개이면 가상 �
     color: rgba(255,255,255, .6);
 }
 
+/* 반응형 Offcanvas 생성 */
+header [data-bs-toggle="offcanvas"] {
+    display: none;
+}
+header .offcanvas .list-group-item {
+    padding: 16px;
+}
+header .offcanvas .list-group-item a{
+    color: black;
+    text-decoration: none;
+}
+header .offcanvas .list-group-item a:hover{
+    text-decoration: underline;
+}
+@media (max-width: 992px) {
+    header .logo {
+        flex-grow: 1;       /* 로고를 기준으로 sign up과 햄버그 버튼을 우측으로 배치 */
+    }
+
+    /* 다중 선택자 활용 / 구분자 : , */
+    header .nav,        /* offcanvas가 열릴 때 nav 태그 숨김 처리 */
+    header .forms input.form-control,        /* offcanvas가 열릴 때 검색창 숨김 처리 */
+    header .forms .btn-link {       /* offcanvas가 열릴 때 sign in 숨김 처리 */
+        display: none;
+    }
+
+    header [data-bs-toggle="offcanvas"] {
+        display: block;
+    }
+}
+
 
 section.hero {
     /* hero 영역 구분을 위해 색 지정 */
