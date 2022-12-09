@@ -1,0 +1,312 @@
+body {
+    /* font-family : 특정한 요소에 글꼴을 지정해주는 속성 */
+    /* font-family : 선택할 구글폰트, 구글폰트를 불러오지 못할 경우 사용하게될 글꼴(sans-serif : 고딕체 - PC에 일반적으로 저장된 글꼴) */
+    /* GOOGLE FONTS - CSS rule 추가 */
+    font-family: 'Poppins', sans-serif;     /* body 태그 내 구글폰트가 상속되어 최상위 요소에 지정해두면 모든 후손 요소에 적용됨 */
+    font-weight: 300;   /* 기본 폰트 사이즈를 300으로 지정해두고 사용하기 위해 작성(font-weight : 가중치, 글꼴의 두께를 의미 */
+}
+
+header {
+    /* 위치 확인을 위해 임시로 배경화면 색 지정 */
+    /* background-color: #040d22; */  /* 배경을 넣어준 다음에는 불필요하므로 없애줌 */
+    position: relative;      /*position을 지정하는 것이 없는 것보다 위치 우선되므로 지정 필요 (배경이미지 위에 배치하기 위함)*/
+}
+
+/*
+header .container {
+
+    /* Bootstrap에서 제공하는 클래스 기능으로 대체!
+
+    /* 로고와 4개의 메뉴 수평 정렬(flex 활용)
+    display: flex;
+    /* 수직 정렬을 가운데로 설정
+    align-items: center;
+    /* 위쪽 여백 : 20px (padding 이용)
+    padding-top: 20px;
+    /* 아래쪽 여백 : 20px (padding 이용)
+    padding-bottom: 20px;
+
+    
+}
+*/
+
+/* Search Box에 글꼴 색상, 투명도 지정) */
+header .forms input.form-control {
+    color: white;
+    background-color: rgba(255,255,255, .15);   /*rgba(r,g,b,투명도)*/
+    border-color: rgba(255,255,255, .3);
+}
+
+/* Serch Box 내 힌트 부분 글씨 색상, 투명도 조정 */
+header .forms input.form-control::placeholder {         /* : 1개이면 가상 클래스 선택자, :: 2개이면 가상 요소 선택자 */
+    color: rgba(255,255,255, .6);
+}
+
+/* 반응형 Offcanvas 생성 */
+header [data-bs-toggle="offcanvas"] {
+    display: none;
+}
+header .offcanvas .list-group-item {
+    padding: 16px;
+}
+header .offcanvas .list-group-item a{
+    color: black;
+    text-decoration: none;
+}
+header .offcanvas .list-group-item a:hover{
+    text-decoration: underline;
+}
+@media (max-width: 992px) {
+    header .logo {
+        flex-grow: 1;       /* 로고를 기준으로 sign up과 햄버그 버튼을 우측으로 배치 */
+    }
+
+    /* 다중 선택자 활용 / 구분자 : , */
+    header .nav,        /* offcanvas가 열릴 때 nav 태그 숨김 처리 */
+    header .forms input.form-control,        /* offcanvas가 열릴 때 검색창 숨김 처리 */
+    header .forms .btn-link {       /* offcanvas가 열릴 때 sign in 숨김 처리 */
+        display: none;
+    }
+
+    header [data-bs-toggle="offcanvas"] {
+        display: block;
+    }
+}
+
+
+section.hero {
+    /* hero 영역 구분을 위해 색 지정 */
+    background-color: #040d22;
+    /* 배경이미지 배치의 기준 설정 */
+    position: relative;  
+    overflow: hidden;   /* 영역 밖으로 넘치는 부분을 잘라내는 역할 */    /*position을 지정하는 것이 없는 것보다 위치 우선되므로 지정 필요 (배경이미지 위에 배치하기 위함)*/
+}
+
+/* Hero Contents 영역 위아래 패딩 추가 */
+section.hero .container {
+    padding-top: 160px;
+    padding-bottom: 160px;
+    position: relative;
+}
+
+/* 헤드라인 제목 글씨 크기, 굵기, 자간 조정 */
+section.hero .headline h1 {
+    font-size: 68px;
+    font-weight: 700;
+    letter-spacing: -2px;       /* 글자 사이 자간을 의미 */
+}
+
+/* 헤드라인 내용 글씨 크기 조정 */
+section.hero .headline p {
+    font-size: 26px;
+}
+
+/* img가 겹쳐져서 보이게 하기 위해 Section에 배치 */
+section.hero img.globe {
+    width: 900px;
+    position: absolute; 
+    top: -5%;
+    left: 46%;
+}
+
+section.hero img.glow {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 50%;       /* top, left는 relative로 지정된 부모요소 기준으로 배치 */
+    left: 50%;
+    transform: translate(-50%,-50%);    /*transform은 자기 자신을 기준으로 배치*/
+}
+
+section.hero .curve {
+    position: absolute;
+    bottom: -1px;
+    left: 0;    /* 0인 경우 단위를 붙이지 않음 */
+}   
+
+
+/* YOUTUBE 영상 넣기 */
+/* section.youtube {
+
+} */
+
+/* Youtube 영상이 반영된 Container 위치 조정 */
+section.youtube .container {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+/* 우주비행사 캐릭터 위치 조정 */
+section.youtube img.astronaut {
+    width: 480px;
+    position: absolute;
+    top: -420px;
+    right: 0;
+}
+
+/* 유튜브 영상 박스 둥근 모서리 처리 */
+section.youtube .ratio {
+    /* 모서리를 둥글게 설정 */
+    border-radius: 10px;
+    /* iframe를 ratio 기준으로 벗어나는 부분 숨김 처리 */
+    overflow: hidden;
+    /* Youtube iframe 위치 확인용! */
+    background-color: black;    /* iframe 자리를 잡은 후 주석 처리 */
+}
+@media (max-width: 768px) {
+    section.youtube img.astronaut {
+        display:none;
+    }
+}
+
+
+/* features 영역 추가 */
+/* section.features {
+
+} */
+
+/* features 영역 위아래 여백 추가 */
+section.features .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* features의 이미지 영역 중 첫번째 */
+section.features .card {
+    color: #627597;
+    border: none;
+}
+
+/* features 이미지 패딩 지정 */
+section.features .card img {
+    padding: 30px 60px;  /* padding: 위아래 값, 좌우 값 / 한꺼번에 적용해줄 수 있다! (즉 각각 정해줄 필요가 없어진다!*/
+    /*padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px;*/
+}
+@media (max-width: 576px) {
+    section.features .card img {
+        padding: 20px 30px;
+    }
+}
+
+/* Google Map 영역 추가 */
+/*
+section.map {
+
+}
+*/
+
+/* map 영역 위아래 여백 추가 */
+section.map .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #627597;
+}
+
+/* map 영역 제목 부분 폰트 변경 */
+section.map h1 {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+/* map 영역 내용 부분 폰트 사이즈 변경 */
+section.map p {
+    font-size: 24px;
+}
+
+#map {      /*id의 경우 공유한 이름이므로 조상요소를 지정해주지 않아도 된다!*/
+    height: 500px;      /* div 태그로 만들어 최대한 늘어나려하므로 가로 너비는 지정하지 않음 */
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 10px;
+    z-index: 1;     /* 3차원 z축 default값이 0인데 이것을 1로 변경함으로써 추후 반영될 footer부분 일러스트 이미지보다 위쪽에 보이도록 해줌 */
+    overflow: hidden;
+}
+
+
+/* footer 영역 */
+
+footer {
+    background-color: #040d22;
+    position: relative;     /*curve 이미지의 기준*/
+    margin-top: 20%;
+}
+
+footer .curve {
+    transform: scale(1,-1);  /*곡면의 상하 반전*/
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+
+/* footer 영역 위아래 여백 추가 */
+/* footer .container {
+
+} */
+
+/* map과 footer 사이 일러스트레이트 이미지 관련 */
+footer img.illustration {
+    width: 100%;
+    margin-top: -33%;   /*일러스트의 위치를 컨테이너 기준 위쪽으로 이동*/
+    margin-bottom: 20%;
+    transform: scale(-1,1)        /*출력한 이미지의 좌우를 반전시킬 때 사용  / scale(x축 크기비율, y축 크기비율) x축 비율 지정을 음수로 하면 좌우 반전이 일어난다*/
+}
+
+/* footer 로고 영역 관련 */
+footer img.logo {
+    opacity: .4;
+}
+
+/* footer 링크목록 관련 */
+footer h5 {
+    font-weight: 700;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 20px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color : rgba(255,255,255,.4);
+    text-decoration: none;  /* 클래스에 각각 추가하지 않고 선택자를 통해 밑줄 제거*/
+    transition: .5s;    /* 흰색-회색 전환에 0.3초 추가 */
+}
+
+footer ul li a:hover {  /* 커서를 해당 영역 위에 가져가면 변환 */
+    color : white;
+}
+
+
+/* footer 최하위 영역 관련 */
+footer .site-links {
+    margin: 0;  /* ul태그의 margin이 default로 1rem으로 설정되어 있음으로 이를 0으로 초기화해주든 단계 추가 */
+    margin-top: 60px;
+    padding: 20px;
+    background-color: rgba(255,255,255,.05);
+    display: flex;  /* d-flex 클래스를 추가하여 적용할 수도 있다! */
+    justify-content: center;    /* 내용을 가운데 정렬 */
+    flex-wrap: wrap;    /* d-flex로 설정된 영역의 줄바꿈 처리가 가능하도록 해줌 */
+}
+
+footer .site-links li {
+    color: rgba(255,255,255,.4);
+    margin-bottom: 0;   /* 위쪽에서 li 태그에 margin-bottom을 적용하여 해당 요소를 0으로 만들어주기 위함 */
+    margin-right: 20px; /* 각 요소별로 20px만큼 여백이 생김 (마지막 요소도 margin이 발생)*/
+}
+
+/* 마지막 요소의 margin-right 적용부분을 0으로 만들어 정확한 가운데 정렬을 맞춰줌 */
+footer .site-links li:last-child {
+    margin-right: 0px;
+}
+@media (max-width: 992px) {
+    footer {
+        text-align: center;
+    }
+    footer img.logo {
+        margin-bottom: 50px;
+    }
+}
