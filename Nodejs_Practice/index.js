@@ -39,39 +39,70 @@ HTTPS : 443 (TCP)
 // });
 
 // express 웹 동작 테스트
+// const express = require('express')
+// const app = express()
+// const port = 3000
+
+// app.get('/', (req, res) => {       // app.[HTTP 메소드]('[라우팅]', [콜백함수])    + 콜백함수 형태 : () => {} /콜백함수란 HTTP 메소드 함수가 끝난 뒤에 실행할 함수를 의미!
+//     res.send('Hello World!')
+// })
+
+// app.get('/dog', (req, res) => {
+//     res.send('<h1>강아지<h1>')        // HTML 코드도 요청으로 보낼 수 있다!
+// })
+
+// app.get('/cat', (req, res) => {
+//     res.json({'sound' : '야옹'})    // json 형태로 보냄(키:값)
+// })
+
+// // 변수 (params)를 이용한 요청-응답
+// app.get('/user/:id', (req, res) => {
+//     const q = req.params  
+//     console.log(q.id)
+
+//     res.send(q.id)
+// })
+
+
+// // query를 이용한 요청-응답
+// app.get("/user/:id", (req, res) => {
+//     const p = req.query
+//     console.log(p)
+
+//     res.send(p.id)
+// })
+
+
+// app.listen(port, () => {
+//     console.log(`Example app listening on port ${port}`)
+// })
+
+
+// 간단한 API 서버 만들기
 const express = require('express')
+var cors = require('cors')
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {       // app.[HTTP 메소드]('[라우팅]', [콜백함수])    + 콜백함수 형태 : () => {} /콜백함수란 HTTP 메소드 함수가 끝난 뒤에 실행할 함수를 의미!
+app.use(cors())
+
+app.get('/', (req, res) => {       
     res.send('Hello World!')
 })
 
-app.get('/dog', (req, res) => {
-    res.send('<h1>강아지<h1>')        // HTML 코드도 요청으로 보낼 수 있다!
+app.get('/sound/:name', (req, res) => {
+    const { name } = req.params
+    
+    if(name == "dog") {
+        res.json({'sound' : '멍멍'})
+    } else if(name == 'cat') {
+        res.json({'sound' : '야옹'})
+    } else if(name == 'pig') {
+        res.json({'sound' : '꿀꿀'})
+    } else {
+        res.json({'sound' : '알수없음'})
+    }
 })
-
-app.get('/cat', (req, res) => {
-    res.json({'sound' : '야옹'})    // json 형태로 보냄(키:값)
-})
-
-// 변수 (params)를 이용한 요청-응답
-app.get('/user/:id', (req, res) => {
-    const q = req.params  
-    console.log(q.id)
-
-    res.send(q.id)
-})
-
-
-// query를 이용한 요청-응답
-app.get("/user/:id", (req, res) => {
-    const p = req.query
-    console.log(p)
-
-    res.send(p.id)
-})
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
