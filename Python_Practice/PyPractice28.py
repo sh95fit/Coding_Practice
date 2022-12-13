@@ -73,13 +73,13 @@ A B D
 
 A = input("문자열 A를 입력하시오 >>> ")
 A = list(A)
-print(A)
+#print(A)
 B = input("공백으로 구분된 문자열 B를 입력하시요 >>> ")
 
 def upper(x) :
     return x.upper()
 
 B = list(map(upper, B.split()))
-print(B)
+#print(B)
 
 print(''.join(list(map(lambda data : data.lower() if data in B else data, A))))
