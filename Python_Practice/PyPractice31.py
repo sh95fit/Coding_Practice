@@ -23,7 +23,9 @@ user_list = dict()
 num = int(input("회원 수를 입력하세요 >>> "))
 
 for i in range(num) :
-    user_list[int(input("회원의 나이를 입력하세요\n>>> "))] = input("회원의 이름을 입력하세요\n>>> ")
+    list = input().split(" ")
+    user_list[list[0]] = list[1]
+    # user_list[int(input("회원의 나이를 입력하세요\n>>> "))] = input("회원의 이름을 입력하세요\n>>> ")
 
 users = dict(sorted(user_list.items()))
 user_list = sorted(user_list.items())
