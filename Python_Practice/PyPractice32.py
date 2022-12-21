@@ -28,30 +28,35 @@ B * D = 8F
 B * E = 9A
 B * F = A5
 '''
-dan = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10,
-       'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
-convert_dan = {n:c for c,n in dan.items()}
-result = ''
-n = input("몇 단을 출력하시겠습니까? >>> ")
-for i in range(1,16) :
-    num = dan[n]
+# dan = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10,
+#        'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
+# convert_dan = {n:c for c,n in dan.items()}
+# result = ''
+# n = input("몇 단을 출력하시겠습니까? >>> ")
+# for i in range(1,16) :
+#     num = dan[n]
     
-    num_1 = (num*i)//16
-    num_2 = (num*i)%16
+#     num_1 = (num*i)//16
+#     num_2 = (num*i)%16
 
-    if num_1 >= 10 :
-        num_1 = convert_dan.get(num_1)
-    if num_2 >= 10 :
-        num_2 = convert_dan.get(num_2) 
-    if i >= 10 :
-        i = convert_dan.get(i)
-    if str(num_1) == '0' :
-        result = str(num_2)
-    else :
-        result = str(num_1) + str(num_2)
+#     if num_1 >= 10 :
+#         num_1 = convert_dan.get(num_1)
+#     if num_2 >= 10 :
+#         num_2 = convert_dan.get(num_2) 
+#     if i >= 10 :
+#         i = convert_dan.get(i)
+#     if str(num_1) == '0' :
+#         result = str(num_2)
+#     else :
+#         result = str(num_1) + str(num_2)
 
-    print(f"{n} * {i} = {result}")   
+#     print(f"{n} * {i} = {result}")   
 
+
+# 다른 풀이
+n = int(input(), 16)
+for i in range(1, 16) :
+    print("%X x %X = %X"%(n, i, (n*i)))
 
 
 '''
@@ -88,9 +93,15 @@ for i in range(1, n+1) :
 2 3
 '''
 
-n = input().split(' ')
-for i in range(1,int(n[0])+1) :
-    for j in range(1,int(n[1])+1) :
+# n = input().split(' ')
+# for i in range(1,int(n[0])+1) :
+#     for j in range(1,int(n[1])+1) :
+#         print(i,j)
+
+# 다른 풀이
+n, m = map(int, input().split())
+for i in range(1, n+1) :
+    for j in range(1, m+1) :
         print(i,j)
 
 
@@ -100,50 +111,63 @@ for i in range(1,int(n[0])+1) :
 숫자를 한글로 변환하기
 12345->일만이천삼백사십오
 '''
-num = {'1' : '일', '2' : '이', '3' : '삼', '4' : '사', '5' : '오', '6' : '육', '7' : '칠', '8' : '팔', '9' : '구', '0' : ''}
-unit_1 = ['', '십', '백', '천']
-unit_2 = ['', '만', '억', '조']
+# num = {'1' : '일', '2' : '이', '3' : '삼', '4' : '사', '5' : '오', '6' : '육', '7' : '칠', '8' : '팔', '9' : '구', '0' : ''}
+# unit_1 = ['', '십', '백', '천']
+# unit_2 = ['', '만', '억', '조']
 
-n = input()
-string = ''
-if(len(n) <= 4) :
-    for i in range(len(n)) :
-        string += num[n[i]] + unit_1[len(n)-(i+1)] 
-elif(len(n) <= 8 and len(n) > 4) :
-    for i in range(len(n)-4) :
-        string += num[n[i]] + unit_1[len(n) % 4-(i+1)]
-    if len(n)-4 >= 1 or len(n)-4 <= 4 :
-        string += unit_2[1]
-    for i in range(len(n)-4, len(n)):
-        string += num[n[i]] + unit_1[len(n)-(i+1)]
-elif(len(n) <= 12 and len(n) > 8) :
-    for i in range(len(n)-8) :
-        string += num[n[i]] + unit_1[len(n) % 4-(i+1)]
-    if len(n)-8 >= 1 or len(n)-8 <= 4:
-        string += unit_2[2]
-    for i in range(len(n)-8, len(n)-4):
-        string += num[n[i]] + unit_1[len(n) % 4-(i%4+1)]
-    if len(n)-4 >= 1 or len(n)-4 <= 4:
-        string += unit_2[1]
-    for i in range(len(n)-4, len(n)):
-        string += num[n[i]] + unit_1[len(n)-(i+1)]
-elif(len(n) <= 16 and len(n) > 12):
-    for i in range(len(n)-12):
-        string += num[n[i]] + unit_1[len(n) % 4-(i+1)]
-    if len(n)-12 >= 1 or len(n)-4 <= 12:
-        string += unit_2[3]
-    for i in range(len(n)-12, len(n)-8):
-        string += num[n[i]] + unit_1[len(n) % 4-(i%4+1)]
-    if len(n)-8 >= 1 or len(n)-8 <= 4:
-        string += unit_2[2]
-    for i in range(len(n)-8, len(n)-4):
-        string += num[n[i]] + unit_1[len(n) % 4-(i%4+1)]
-    if len(n)-4 >= 1 or len(n)-4 <= 4:
-        string += unit_2[1]
-    for i in range(len(n)-4, len(n)):
-        string += num[n[i]] + unit_1[len(n)-(i+1)]
-print(string)
+# n = input()
+# string = ''
+# if(len(n) <= 4) :
+#     for i in range(len(n)) :
+#         string += num[n[i]] + unit_1[len(n)-(i+1)] 
+# elif(len(n) <= 8 and len(n) > 4) :
+#     for i in range(len(n)-4) :
+#         string += num[n[i]] + unit_1[len(n) % 4-(i+1)]
+#     if len(n)-4 >= 1 or len(n)-4 <= 4 :
+#         string += unit_2[1]
+#     for i in range(len(n)-4, len(n)):
+#         string += num[n[i]] + unit_1[len(n)-(i+1)]
+# elif(len(n) <= 12 and len(n) > 8) :
+#     for i in range(len(n)-8) :
+#         string += num[n[i]] + unit_1[len(n) % 4-(i+1)]
+#     if len(n)-8 >= 1 or len(n)-8 <= 4:
+#         string += unit_2[2]
+#     for i in range(len(n)-8, len(n)-4):
+#         string += num[n[i]] + unit_1[len(n) % 4-(i%4+1)]
+#     if len(n)-4 >= 1 or len(n)-4 <= 4:
+#         string += unit_2[1]
+#     for i in range(len(n)-4, len(n)):
+#         string += num[n[i]] + unit_1[len(n)-(i+1)]
+# elif(len(n) <= 16 and len(n) > 12):
+#     for i in range(len(n)-12):
+#         string += num[n[i]] + unit_1[len(n) % 4-(i+1)]
+#     if len(n)-12 >= 1 or len(n)-4 <= 12:
+#         string += unit_2[3]
+#     for i in range(len(n)-12, len(n)-8):
+#         string += num[n[i]] + unit_1[len(n) % 4-(i%4+1)]
+#     if len(n)-8 >= 1 or len(n)-8 <= 4:
+#         string += unit_2[2]
+#     for i in range(len(n)-8, len(n)-4):
+#         string += num[n[i]] + unit_1[len(n) % 4-(i%4+1)]
+#     if len(n)-4 >= 1 or len(n)-4 <= 4:
+#         string += unit_2[1]
+#     for i in range(len(n)-4, len(n)):
+#         string += num[n[i]] + unit_1[len(n)-(i+1)]
+# print(string)
 
+
+# 다른 풀이
+n = int(input())
+numbers = ["일", "이", "삼", "사", "오", "육", "칠", "팔", "구"]
+a = ["","십","백","천"]
+result = []
+i = 0
+while n>0 :
+    n, r = divmod(n, 10)
+    if r > 0 :
+        result.append(numbers[r-1]+a[i])
+    i += 1
+print(''.join(result[::-1]))
 
 '''
 4. 
@@ -155,12 +179,28 @@ print(string)
 만약 3, 6, 9 가 들어간 수를 자신이 불러야 하는 상황이라면, 수를 부르는 대신 "박수(X)" 를 쳐야 한다.
 33과 같이 3,6,9가 두 번 들어간 수 일때, "짝짝"과 같이 박수를 두 번 치는 형태도 있다. 
 '''
-for i in range(100) :
-    if str(i).count('3') != 0 or str(i).count('6') != 0 or str(i).count('9'):
-        print("짝"*(str(i).count('3')+str(i).count('6')+str(i).count('9')))
-    else : 
-        print(i)
+# n = int(input())
+# for i in range(n) :
+#     if str(i).count('3') != 0 or str(i).count('6') != 0 or str(i).count('9'):
+#         print("짝"*(str(i).count('3')+str(i).count('6')+str(i).count('9')))
+#     else : 
+#         print(i)
 
+
+# 다른 풀이
+n = int(input())
+
+for i in range(1, n+1) :
+    s = str(i)
+    cnt = 0
+    for x in s :
+        if x == '3' or x == '6' or x == '9' :
+            cnt += 1
+        if cnt == 0 :
+            print(i, end = ' ')
+        else :
+            print('짝'*cnt, end = ' ')
+print("\n")
 
 '''
 5.
@@ -174,11 +214,26 @@ for i in range(100) :
 첫째 줄부터 셋째 줄까지 한 줄에 하나씩 결과를  도는 A, 개는 B, 걸은 C, 윷은 D, 모는 E로 출력한다.
 '''
 
-result = {0 : 'E', 1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D'}
+# result = {0 : 'E', 1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D'}
 
-f_time = sum(map(int, input("첫 번째 시도 : ").split(' ')))
-s_time = sum(map(int, input("두 번째 시도 : ").split(' ')))
-t_time = sum(map(int, input("세 번째 시도 : ").split(' ')))
-print(result[int(f_time)])
-print(result[int(s_time)])
-print(result[int(t_time)])
+# f_time = sum(map(int, input("첫 번째 시도 : ").split(' ')))
+# s_time = sum(map(int, input("두 번째 시도 : ").split(' ')))
+# t_time = sum(map(int, input("세 번째 시도 : ").split(' ')))
+# print(result[int(f_time)])
+# print(result[int(s_time)])
+# print(result[int(t_time)])
+
+
+# 또 다른 풀이
+for i in range(3) :
+    a = list(map(int, input().split()))
+    if a.count(0) == 1 :
+        print('A')
+    elif a.count(0) == 2 :
+        print('B')
+    elif a.count(0) == 3:
+        print('C')
+    elif a.count(0) == 4:
+        print('D')
+    elif a.count(0) == 0:
+        print('E')
