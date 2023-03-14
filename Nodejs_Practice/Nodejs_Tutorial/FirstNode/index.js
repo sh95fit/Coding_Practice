@@ -1,7 +1,14 @@
-const express = require('express');
-const app = express(),
-      testJson = require(__dirname + '/../test/test.json');
+const express = require('express'),
+      app = express();
 
+const Pool = require("./pool"),
+      Testdb = require("./db_conn");
+
+const testJson = require(__dirname + '/../test/test.json');
+
+const pool = new Pool();
+
+app.use(express.static('public'));
 app.set('views', __dirname + "/./views");
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
@@ -16,7 +23,16 @@ app.get('/test/:email', (req, res) => {
   res.json(testJson);
 })
 
-app.use(express.static('public'));
+
+app.get('/dbtest/:user', (req, res) => {
+  let user = req.params.user;
+  let dbconn = new Testdb(pool);
+  dbconn.execute( conn => {
+    conn.query("select * from User where uid=?", [user], (err, ret) => {
+      res.json(ret);
+    });
+  });
+});
 
 // app.get('/', (req, res) => {
 //   // res.send("Nodejs TEST!");
