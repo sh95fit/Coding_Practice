@@ -5,11 +5,13 @@
 <!-- <h1>Flask Basic Settings {{ name }}</h1> -->
 
 <div id="app">
+  <h1 class="mb-3">[[ message ]]</h1>
+
   <form action="">
     <div class="form-group row">
       <div class="col-9">
         <label for=""> Create new task </label>
-        <input type="text" class="form-control mt-1" />
+        <input type="text" class="form-control mt-1" v-model="task" />
       </div>
       <div class="col-auto mt-auto">
         <button class="btn btn-success" type="submit">Create</button>
@@ -18,9 +20,9 @@
   </form>
 
   <div class="mt-5">
-    <div class="card">
+    <div class="card mb-2" v-for="task, index in tasks" :key="index">
       <div class="card-body row justify-content-between px-4">
-        Do nothing
+        [[ task.title ]]
         <button type="submit" class="btn-close"></button>
       </div>
     </div>
