@@ -1,0 +1,27 @@
+{
+  "name": "node_vue",
+  "version": "0.0.1",
+  "description": "nodejs & vue test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh95fit/Coding_Practice.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Vue"
+  ],
+  "author": "KIMSEHUN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sh95fit/Coding_Practice/issues"
+  },
+  "homepage": "https://github.com/sh95fit/Coding_Practice#readme",
+  "dependencies": {
+    "buffer": "^6.0.3"
+  }
+
+}

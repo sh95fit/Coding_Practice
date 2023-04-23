@@ -1,0 +1,32 @@
+{
+  "name": "first_node",
+  "version": "0.0.1",
+  "description": "Nodejs Practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh95fit/Coding_Practice.git"
+  },
+  "keywords": [
+    "Nodejs"
+  ],
+  "author": "KIMSEHUN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sh95fit/Coding_Practice/issues"
+  },
+  "homepage": "https://github.com/sh95fit/Coding_Practice#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.2",
+    "crypto-js": "^4.1.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "hashmap": "^2.4.0",
+    "mysql": "^2.18.1",
+    "open-graph-scraper": "^5.2.0"
+  }
+}
