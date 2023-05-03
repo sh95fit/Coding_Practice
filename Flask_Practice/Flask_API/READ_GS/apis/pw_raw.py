@@ -1,6 +1,23 @@
-from flask_restx import Namespace, Resource
-from READ_GS import mysql
-from flask import jsonify
+from flask_restx import Namespace, Resource, fields, reqparse
+# from READ_GS import mysql
+from flask import jsonify, Response
+import json
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.automap import automap_base
+from ..db_uri import gsrems_uri
+
+
+DB_URI = gsrems_uri
+engine = create_engine(DB_URI)
+db_session = scoped_session(sessionmaker(bind=engine))
+
+Base = automap_base()
+Base.prepare(engine, reflect=True)
+
+gsmon_business = Base.classes.gsmon_business
+
 
 ns = Namespace(
   'pw_raw',
@@ -8,26 +25,17 @@ ns = Namespace(
 )
 
 
-@ns.route('')
-class BizList(Resource) :
-  def get(self) :
-    try:
-      cur  = mysql.connection.cursor()
-      cur.execute("SELECT * FROM gsmon_business limit 1")
-      results = cur.fetchone()
-      cur.close()
-      return jsonify(results)
-    except Exception as e:
-      return "Error : {}".format(e), 500
+biz_model = ns.model('gsmon_business', {
+  'id' : fields.Integer(required=True, description='사업 ID'),
+  'energe': fields.String(required=True, description='에너지원'),
+  'cat1' : fields.String(required=True, description='카테고리1'),
+  'name' : fields.String(required=True, description='사업명')
+})
 
-@ns.route('/<date_id>/<rtuid>')
-class PWdataList(Resource) :
-  def get(self, date_id, rtuid) :
-    try:
-      cur  = mysql.connection.cursor()
-      cur.execute(f"SELECT * FROM gsmon_solar_data WHERE save_time_id = {date_id} AND rtu_id = {rtuid} limit 1")
-      results = cur.fetchone()
-      cur.close()
-      return str(results)
-    except Exception as e:
-      return "Error : {}".format(e), 500
+
+@ns.route('/businesses')
+class BizList(Resource) :
+  @ns.marshal_list_with(biz_model)
+  def get(self) :
+    data = db_session.query(gsmon_business).all()
+    return data
