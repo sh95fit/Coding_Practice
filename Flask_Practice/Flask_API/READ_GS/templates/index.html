@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSREMS 발전 데이터 조회 테스트</title>
+  </head>
+  <body>
+    <h1>GSREMS 발전 데이터</h1>
+    <form method="get">
+      <label for="rtu_id">RTU ID:</label>
+      <input type="text" name="rtu_id" id="rtu_id" /><br />
+      <label for="date_id">Date ID:</label>
+      <input type="text" name="date_id" id="date_id" /><br />
+      <input type="submit" value="조회" />
+    </form>
+    <table>
+      <tr>
+        <th>사업 ID</th>
+        <th>RTU_ID</th>
+        <th>인버터 ID</th>
+        <th>멀티</th>
+        <th>상 구분</th>
+        <th>국번</th>
+        <th>에러코드</th>
+        <th>PV전압1</th>
+        <th>PV전압2</th>
+        <th>PV전압3</th>
+        <th>PV전압4</th>
+        <th>PV전압5</th>
+        <th>PV전압6</th>
+        <th>PV전류1</th>
+        <th>PV전류2</th>
+        <th>PV전류3</th>
+        <th>PV전류4</th>
+        <th>PV전류5</th>
+        <th>PV전류6</th>
+        <th>PV전압</th>
+        <th>출력 전압</th>
+        <th>출력 전류</th>
+        <th>s상 전압</th>
+        <th>v상 전압</th>
+        <th>t상 전압</th>
+        <th>s상 전류</th>
+        <th>v상 전류</th>
+        <th>t상 전류</th>
+        <th>출력 전력</th>
+        <th>역률</th>
+        <th>주파수</th>
+        <th>온도</th>
+        <th>금일발전량</th>
+        <th>누적발전량</th>
+        <th>저장시간 ID</th>
+        <th>저장시간</th>
+      </tr>
+      {% if data %} {% for item in data %}
+      <tr>
+        <td>{{ item.rtu_id }}</td>
+        <td>{{ item.inverter_id }}</td>
+        <td>{{ item.multi }}</td>
+        <td>{{ item.phase }}</td>
+        <td>{{ item.code }}</td>
+        <td>{{ item.lerr }}</td>
+        <td>{{ item.inv }}</td>
+        <td>{{ item.inv2 }}</td>
+        <td>{{ item.inv3 }}</td>
+        <td>{{ item.inv4 }}</td>
+        <td>{{ item.inv5 }}</td>
+        <td>{{ item.inv6 }}</td>
+        <td>{{ item.ina }}</td>
+        <td>{{ item.ina2 }}</td>
+        <td>{{ item.ina3 }}</td>
+        <td>{{ item.ina4 }}</td>
+        <td>{{ item.ina5 }}</td>
+        <td>{{ item.ina6 }}</td>
+        <td>{{ item.inp }}</td>
+        <td>{{ item.outv }}</td>
+        <td>{{ item.outa }}</td>
+        <td>{{ item.outvr }}</td>
+        <td>{{ item.outvs }}</td>
+        <td>{{ item.outvt }}</td>
+        <td>{{ item.outar }}</td>
+        <td>{{ item.outas }}</td>
+        <td>{{ item.outat }}</td>
+        <td>{{ item.outp }}</td>
+        <td>{{ item.pf }}</td>
+        <td>{{ item.frq }}</td>
+        <td>{{ item.temp }}</td>
+        <td>{{ item.tpg }}</td>
+        <td>{{ item.cpg }}</td>
+        <td>{{ item.save_time_id }}</td>
+        <td>{{ item.save_time }}</td>
+      </tr>
+      {% endfor %} {% endif %}
+    </table>
+  </body>
+</html>
