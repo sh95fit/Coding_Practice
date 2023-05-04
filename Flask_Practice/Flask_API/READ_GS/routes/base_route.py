@@ -9,7 +9,7 @@ bp = Blueprint(NAME, __name__)
 
 @bp.route('/')
 def index() :
-  return 'READ GSREMS'
+  return redirect('/rawdata')
 
 @bp.route('/rawdata', methods=['GET'])
 def rawdata() :
