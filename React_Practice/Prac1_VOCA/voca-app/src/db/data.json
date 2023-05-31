@@ -1,0 +1,57 @@
+{
+  "days" : [
+    {"id": 1, "day": 1},
+    {"id": 2, "day": 2},
+    {"id": 3, "day": 3}
+  ],
+
+  "words" : [
+    {
+      "id" : 1,
+      "day" : 1,
+      "eng" : "book",
+      "kor" : "책",
+      "isDon" : false
+    },
+
+    {
+      "id" : 2,
+      "day" : 1,
+      "eng" : "rice",
+      "kor" : "밥",
+      "isDon" : false
+    },
+
+    {
+      "id" : 3,
+      "day" : 2,
+      "eng" : "engine",
+      "kor" : "엔진",
+      "isDon" : false
+    },
+
+    {
+      "id" : 4,
+      "day" : 2,
+      "eng" : "practice",
+      "kor" : "연습",
+      "isDon" : false
+    },
+
+    {
+      "id" : 5,
+      "day" : 3,
+      "eng" : "test",
+      "kor" : "시험",
+      "isDon" : false
+    },
+
+    {
+      "id" : 6,
+      "day" : 3,
+      "eng" : "exercise",
+      "kor" : "운동",
+      "isDon" : false
+    }
+  ]
+}
