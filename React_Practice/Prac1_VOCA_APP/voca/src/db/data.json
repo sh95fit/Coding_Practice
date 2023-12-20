@@ -66,6 +66,20 @@
       "kor": "무엇",
       "isDone": false,
       "id": 8
+    },
+    {
+      "day": "2",
+      "eng": "good",
+      "kor": "좋은",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "day": "4",
+      "eng": "come",
+      "kor": "오다",
+      "isDone": false,
+      "id": 10
     }
   ]
 }
