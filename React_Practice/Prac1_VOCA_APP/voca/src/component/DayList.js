@@ -1,15 +1,17 @@
 import {Link} from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import useFetch from "../hook/useFetch";
 
 export default function DayList() {
-    const [days, setDays] = useState([]);
-    const [count, setCount] = useState(0);
+    // const [days, setDays] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:3001/days')
-        .then(res => {return res.json()})
-        .then(data => setDays(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:3001/days')
+    //     .then(res => {return res.json()})
+    //     .then(data => setDays(data))
+    // }, [])
+
+    const days = useFetch("http://localhost:3001/days")
 
     return (
         <>
